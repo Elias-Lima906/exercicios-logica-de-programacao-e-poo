@@ -1,4 +1,4 @@
-package br.com.zup.aulatreze;
+package br.com.zup.aulatreze.media;
 
 public class AlunosMatriculados {
 
