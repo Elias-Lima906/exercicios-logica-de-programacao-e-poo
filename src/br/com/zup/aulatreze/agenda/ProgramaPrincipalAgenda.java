@@ -45,9 +45,9 @@ public class ProgramaPrincipalAgenda {
 			case 3:
 				System.out.print("\n\n\tDigite o Nome E Te Retornarei A Posição!\n" + "\tNome: ");
 				nome = teclado.next();
-				if(agenda.buscaPessoa(nome) != -1) {
-				System.out.printf("\n\tA Posição Na Agenda É %d\n", agenda.buscaPessoa(nome));
-				}else {
+				if (agenda.buscaPessoa(nome) != -1) {
+					System.out.printf("\n\tA Posição Na Agenda É %d\n", agenda.buscaPessoa(nome));
+				} else {
 					System.out.println("\n\tNão Existe Pessoa Com Este Nome!\n");
 				}
 				break;
