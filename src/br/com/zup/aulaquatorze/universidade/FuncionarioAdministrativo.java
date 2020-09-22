@@ -22,12 +22,12 @@ package br.com.zup.aulaquatorze.universidade;
 //Adiciona professor (para os coordenadores): observe que um coordenador só pode
 //coordenar 10 professores.
 
-public class FuncionariosAdministrativo extends Funcionario {
+public class FuncionarioAdministrativo extends Funcionario {
 
 	String funcaoAdministrativa;
 	String senioridade;
 
-	public FuncionariosAdministrativo(String nome, String cpf, int numeroRegistro, String orgaoLotacao, float salario,
+	public FuncionarioAdministrativo(String nome, String cpf, int numeroRegistro, String orgaoLotacao, float salario,
 			String funcaoAdministrativa, String senioridade) {
 		super(nome, cpf, numeroRegistro, orgaoLotacao, salario);
 

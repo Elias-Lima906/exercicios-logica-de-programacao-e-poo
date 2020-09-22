@@ -41,11 +41,11 @@ public class Professor extends Funcionario {
 
 	public void imprimirDadosProfessores() {
 		System.out.println("\n\t-----------------------------");
-		// colocar super.get"" no imprime professores
+		System.out.println("\tDados Do(s) Professor(es)");
 		System.out.printf(
-				"\tNome: %s\nCPF: %s\n\tNumero De Registro: %d\n\tOrgão De Lotacao: %s\n\tNivel De Graduação: %d\n\tDisciplina Ministrada: %s\n\tTurmas: %d\n\tSalario: R$ %.2f",
+				"\tNome: %s\n\tCPF: %s\n\tNumero De Registro: %d\n\tOrgão De Lotacao: %s\n\tNivel De Graduação: %s\n\tDisciplina Ministrada: %s\n\tTurmas: %d\n\tQuantidade de Aluno: %d\n\tSalario: R$ %.2f",
 				super.getNome(), super.getCpf(), super.getNumeroRegistro(), super.getOrgaoLotacao(), nivelGraduacao,
-				disciplinaMinistrada, this.qtdTurmas, super.getSalario());
+				disciplinaMinistrada, this.qtdTurmas, this.qtdAlunos, super.getSalario());
 		System.out.println("\n\t-----------------------------\n");
 	}
 
