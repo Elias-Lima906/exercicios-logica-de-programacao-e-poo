@@ -4,6 +4,59 @@ import java.util.Scanner;
 
 public class ProgramaPrincipalAgenda {
 
+	public static void armazenaPessoa(Scanner teclado, Agenda agenda) {
+		System.out.println("\n\tDigite As Informações");
+
+		System.out.print("\n\tNome: ");
+		String nome = teclado.next();
+
+		System.out.print("\tAno Nasc: ");
+		int anoNascimento = teclado.nextInt();
+
+		System.out.print("\tAltura: ");
+		float altura = teclado.nextFloat();
+
+		try {
+			agenda.armazenaPessoa(nome, anoNascimento, altura);
+		} catch (AgendaException e) {
+
+			System.err.println(e.getMensagem());
+		}
+	}
+
+	public static void removePessoa(Scanner teclado, Agenda agenda) {
+		System.out.print("\n\tDigite o Nome De Uma Pessoa Para Remove-lá!\n" + "\tNome: ");
+		String nome = teclado.next();
+		try {
+			agenda.removePessoa(nome);
+		} catch (AgendaException e) {
+			System.err.println(e.getMensagem());
+		}
+	}
+
+	public static void buscaPosicaoPessoa(Scanner teclado, Agenda agenda) {
+
+		System.out.print("\n\n\tDigite o Nome E Te Retornarei A Posição!\n" + "\tNome: ");
+		String nome = teclado.next();
+
+		try {
+			System.out.printf("\n\tA Posição Na Agenda É %d\n", agenda.buscaPosicaoPessoa(nome));
+		} catch (AgendaException e) {
+			System.out.println(e.getMensagem());
+		}
+	}
+
+	public static void imprimePessoa(Scanner teclado, Agenda agenda) {
+
+		System.out.print("\n\n\tDigite Uma Posição Da Agenda : \n" + "\tPosição: ");
+		int posicao = teclado.nextInt();
+		try {
+			agenda.imprimePessoa(posicao);
+		} catch (AgendaException e) {
+			System.err.println(e.getMensagem());
+		}
+	}
+
 	public static void main(String[] args) {
 
 		int opcao;
@@ -22,40 +75,19 @@ public class ProgramaPrincipalAgenda {
 
 			switch (opcao) {
 			case 1:
-				System.out.println("\n\tDigite As Informações");
-
-				System.out.print("\n\tNome: ");
-				String nome = teclado.next();
-
-				System.out.print("\tAno Nasc: ");
-				int anoNascimento = teclado.nextInt();
-
-				System.out.print("\tAltura: ");
-				float altura = teclado.nextFloat();
-
-				agenda.armazenaPessoa(nome, anoNascimento, altura);
+				armazenaPessoa(teclado, agenda);
 				break;
 
 			case 2:
-				System.out.print("\n\tDigite o Nome De Uma Pessoa Para Remove-lá!\n" + "\tNome: ");
-				nome = teclado.next();
-				agenda.removePessoa(nome);
+				removePessoa(teclado, agenda);
 				break;
 
 			case 3:
-				System.out.print("\n\n\tDigite o Nome E Te Retornarei A Posição!\n" + "\tNome: ");
-				nome = teclado.next();
-				if (agenda.buscaPessoa(nome) != -1) {
-					System.out.printf("\n\tA Posição Na Agenda É %d\n", agenda.buscaPessoa(nome));
-				} else {
-					System.out.println("\n\tNão Existe Pessoa Com Este Nome!\n");
-				}
+				buscaPosicaoPessoa(teclado, agenda);
 				break;
 
 			case 4:
-				System.out.print("\n\n\tDigite Uma Posição Da Agenda : \n" + "\tPosição: ");
-				int posicao = teclado.nextInt();
-				agenda.imprimePessoa(posicao);
+				imprimePessoa(teclado, agenda);
 				break;
 
 			case 5:

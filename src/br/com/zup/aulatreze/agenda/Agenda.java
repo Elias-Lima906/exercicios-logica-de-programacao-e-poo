@@ -1,8 +1,11 @@
 package br.com.zup.aulatreze.agenda;
 
-import br.com.zup.exercicios.auladoze.pessoa.Pessoa;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Agenda {
+
+	static final int QTD_PESSOAS = 10;
 
 	/*
 	 * Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de
@@ -15,55 +18,57 @@ public class Agenda {
 	 * dados da pessoa que está na posição “i” da agenda.
 	 */
 
-	private Pessoa[] pessoas;
+	List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
 	public Agenda() {
-		this.pessoas = new Pessoa[10];
 	}
 
-	public void armazenaPessoa(String nome, int anoNascimento, float altura) {
+	public void armazenaPessoa(String nome, int anoNascimento, float altura) throws AgendaException {
 
 		Pessoa armazenaPessoa = new Pessoa(nome, anoNascimento, altura);
 
-		for (int i = 0; i < this.pessoas.length; i++) {
-			if (this.pessoas[i] == null) {
-				this.pessoas[i] = armazenaPessoa;
-				break;
-			}
+		if (this.pessoas.size() < QTD_PESSOAS) {
+			this.pessoas.add(armazenaPessoa);
+			return;
 		}
-
+		throw new AgendaException("\n\tQuantidade Máxima De Pessoas Atingidas\n");
 	}
 
-	public void removePessoa(String name) {
+	public void removePessoa(String name) throws AgendaException {
+		
 
-		for (int i = 0; i < pessoas.length; i++) {
-			if (this.pessoas[i] != null && this.pessoas[i].getNome().equals(name)) {
-				this.pessoas[i] = null;
+		for (int i = 0; i < pessoas.size(); i++) {
+			if (this.pessoas.get(i).getNome().equals(name)) {
+				pessoas.remove(i);
+				return;
 			}
 		}
+		throw new AgendaException("\n\tA Pessoa Não Foi Encontrada\n");
 	}
 
-	public int buscaPessoa(String name) {
+	public int buscaPosicaoPessoa(String name) throws AgendaException {
 
-		for (int i = 0; i < this.pessoas.length; i++) {
-			if (this.pessoas[i] != null && this.pessoas[i].getNome().equals(name)) {
+		for (int i = 0; i < this.pessoas.size(); i++) {
+			if (this.pessoas.get(i).getNome().equals(name)) {
 				return i;
 			}
 		}
-		return -1;
+		throw new AgendaException("\n\tA Pessoa Não Foi Encontrada\n");
 	}
 
 	public void imprimeAgenda() {
 
-		for (Pessoa agenda : this.pessoas) {
-			if(agenda != null)
-			agenda.imprimirDadosPessoais();
+		for (Pessoa pessoa : this.pessoas) {
+			if (pessoa != null)
+				pessoa.imprimirDadosPessoais();
 		}
 	}
 
-	public void imprimePessoa(int index) {
-		if (index >= 0 || pessoas[index] != null) {
-			this.pessoas[index].imprimirDadosPessoais();
+	public void imprimePessoa(int index) throws AgendaException {
+		if (index >= 0 || pessoas.get(index) != null) {
+			this.pessoas.get(index).imprimirDadosPessoais();
+		return;
 		}
+		throw new AgendaException("\n\tA Pessoa Não Foi Encontrada\n");
 	}
 }
