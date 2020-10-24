@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulaonze.elevador;
+package br.com.zup.aulaonze.elevador;
 
 import java.util.Scanner;
 

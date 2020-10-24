@@ -1,4 +1,4 @@
-package  br.com.zup.exercicios.aulacinco;
+package  br.com.zup.aulacinco;
 
 import java.util.Scanner;
 

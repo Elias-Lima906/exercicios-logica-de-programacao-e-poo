@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulaonze.cartaodecredito;
+package br.com.zup.aulaonze.cartaodecredito;
 
 public class CartaoDeCredito {
 

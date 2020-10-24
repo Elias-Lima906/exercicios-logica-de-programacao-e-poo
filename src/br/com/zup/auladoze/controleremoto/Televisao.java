@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.auladoze.controleremoto;
+package br.com.zup.auladoze.controleremoto;
 
 /*
  * 4. Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o

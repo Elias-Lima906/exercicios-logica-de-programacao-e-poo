@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulaonze.contabancaria;
+package br.com.zup.aulaonze.contabancaria;
 
 public class ContaBancaria {
 

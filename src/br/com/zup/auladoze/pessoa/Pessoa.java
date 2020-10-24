@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.auladoze.pessoa;
+package br.com.zup.auladoze.pessoa;
 
 public class Pessoa {
 

@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulanove;
+package br.com.zup.aulanove;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

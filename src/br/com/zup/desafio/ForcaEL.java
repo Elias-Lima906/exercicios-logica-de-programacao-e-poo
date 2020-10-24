@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.desafio;
+package br.com.zup.desafio;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

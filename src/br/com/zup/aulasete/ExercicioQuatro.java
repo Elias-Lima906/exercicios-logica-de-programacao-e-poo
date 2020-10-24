@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulasete;
+package br.com.zup.aulasete;
 
 import java.util.Scanner;
 

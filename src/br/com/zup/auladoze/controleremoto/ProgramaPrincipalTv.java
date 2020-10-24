@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.auladoze.controleremoto;
+package br.com.zup.auladoze.controleremoto;
 
 import java.util.Scanner;
 

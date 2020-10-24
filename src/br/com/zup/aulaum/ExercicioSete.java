@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulaum;
+package br.com.zup.aulaum;
 
 import java.util.Scanner;
 

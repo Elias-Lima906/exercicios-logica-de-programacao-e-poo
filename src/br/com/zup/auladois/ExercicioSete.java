@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.auladois;
+package br.com.zup.auladois;
 
 import java.util.Scanner;
 

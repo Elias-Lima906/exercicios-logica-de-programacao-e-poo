@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulaoito;
+package br.com.zup.aulaoito;
 
 import java.io.FileWriter;
 import java.io.IOException;

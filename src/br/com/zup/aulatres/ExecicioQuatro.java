@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.aulatres;
+package br.com.zup.aulatres;
 
 public class ExecicioQuatro {
 
